@@ -11,7 +11,17 @@ namespace EventRegistrationSystem.Controllers
         {
             return View(events);
         }
+        public IActionResult Delete(int id)
+        {
+            var selectedEvent = events.FirstOrDefault(x => x.Id == id);
 
+            if (selectedEvent != null)
+            {
+                events.Remove(selectedEvent);
+            }
+
+            return RedirectToAction("Index");
+        }
         public IActionResult Create()
         {
             return View();
