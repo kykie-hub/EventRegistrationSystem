@@ -1,0 +1,44 @@
+﻿@model EventRegistrationSystem.Models.Event
+
+@{
+    ViewData["Title"] = "Register Event";
+}
+
+<div class="container py-5">
+
+    <h2 class="mb-4">Register Event</h2>
+
+    <form asp-action="Create" method="post">
+
+        <div class="mb-3">
+            <label class="form-label">Event Name</label>
+            <input asp-for="EventName" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Organizer</label>
+            <input asp-for="Organizer" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Event Date</label>
+            <input asp-for="EventDate" type="date" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Venue</label>
+            <input asp-for="Venue" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Participants</label>
+            <input asp-for="Participants" type="number" class="form-control" />
+        </div>
+
+        <button class="btn btn-primary">
+            Register Event
+        </button>
+
+    </form>
+
+</div>
